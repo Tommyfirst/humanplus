@@ -18,14 +18,18 @@ Install IsaacGym v4 first from the [official source](https://developer.nvidia.co
 
  #pay attention
 #如果找不到虚拟环境中的python，则：
-export LD_LIBRARY_PATH=/home/tommy/anaconda3/envs/HSTHIT/lib:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+
+'export LD_LIBRARY_PATH=/home/tommy/anaconda3/envs/HSTHIT/lib:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH'
 
 #运行RL训练前额外需要安装的库：
+'''
 pip install wandb
 pip install ipython
 pip install Pillow==9.0.0 #更改版本
+'''
 
 修改强化学习训练过程中train.py中的wandb账号用户名、工程项目名：
+
 def train(args):
     wandb.init(project='humanoid', name=args.run_name, entity="wandb名字")
     
