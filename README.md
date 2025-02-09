@@ -16,12 +16,11 @@ Install IsaacGym v4 first from the [official source](https://developer.nvidia.co
     cd HST/rsl_rl && pip install -e . 
     cd HST/legged_gym && pip install -e .
 
- #pay attention
-#如果找不到虚拟环境中的python，则：
+如果找不到虚拟环境中的python，则：
 
 `export LD_LIBRARY_PATH=/home/tommy/anaconda3/envs/HSTHIT/lib:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH`
 
-#运行RL训练前额外需要安装的库：
+如果 conda create 安装了python版本，则运行RL训练前可能额外需要安装的库：
 
 ```
 pip install wandb
