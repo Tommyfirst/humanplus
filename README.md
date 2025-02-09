@@ -11,11 +11,28 @@ Reinforcement learning in simulation is based on [legged_gym](https://github.com
 #### Installation
 Install IsaacGym v4 first from the [official source](https://developer.nvidia.com/isaac-gym). Place the isaacgym fold inside the HST folder.
 
+    conda create -n HST python=3.8(也可以先不加python 安装) 
+    conda activate HST
     cd HST/rsl_rl && pip install -e . 
     cd HST/legged_gym && pip install -e .
 
+ #pay attention
+#如果找不到虚拟环境中的python，则：
+export LD_LIBRARY_PATH=/home/tommy/anaconda3/envs/HSTHIT/lib:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+
+#运行RL训练前额外需要安装的库：
+pip install wandb
+pip install ipython
+pip install Pillow==9.0.0 #更改版本
+
+修改强化学习训练过程中train.py中的wandb账号用户名、工程项目名：
+def train(args):
+    wandb.init(project='humanoid', name=args.run_name, entity="wandb名字")
+    
+
 #### Example Usages
 To train HST:
+    #如果第一次训练过程中被中断掉，第二次运行训练无法成功，主要是GPU被占用，需要重启或杀掉相应的进程    
 
     python legged_gym/scripts/train.py --run_name 0001_test --headless --sim_device cuda:0 --rl_device cuda:0
 
