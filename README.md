@@ -21,7 +21,7 @@ To train HST:
 
 To play a trained policy:
 
-    python legged_gym/scripts/play.py --run_name 0001_test --checkpoint -1 --headless --sim_device cuda:0 --rl_device cuda:0
+    python legged_gym/scripts/play.py --load_run 0001_test --checkpoint -1 --headless --sim_device cuda:0 --rl_device cuda:0
 
 
 ## Humanoid Imitation Transformer (HIT)
